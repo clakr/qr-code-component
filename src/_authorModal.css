@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&family=Wix+Madefor+Display:wght@400;600;700&display=swap");
+
 .keyboard {
+  font-family: "Wix Madefor Display", sans-serif;
   position: absolute;
   inset: auto 1rem 1rem auto;
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -16,6 +19,8 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 700;
 }
 
 .keyboard > kbd:first-child {
@@ -24,6 +29,7 @@
 
 .modal {
   display: none;
+  font-family: "Wix Madefor Display", sans-serif;
 }
 
 .modal__overlay {
