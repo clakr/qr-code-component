@@ -1,3 +1,5 @@
+import "./_authorModal.css";
+
 function changeTextOrSource(
   element: HTMLElement | HTMLAnchorElement | null,
   text: string

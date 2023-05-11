@@ -1,14 +1,15 @@
-function changeTextContent(element: HTMLTitleElement | Element | null){
-  if(!element) return
+import "./style.css";
 
-  element.textContent = import.meta.env.VITE_PROJECT_NAME
+function changeTextContent(element: HTMLTitleElement | Element | null) {
+  if (!element) return;
+
+  element.textContent = import.meta.env.VITE_PROJECT_NAME;
 }
 
 (function () {
-
   const title = document.querySelector("title");
-  changeTextContent(title)
+  changeTextContent(title);
 
-  const heading = document.querySelector('.sr-only')
-  changeTextContent(heading)
+  const heading = document.querySelector(".sr-only");
+  changeTextContent(heading);
 })();
