@@ -57,11 +57,11 @@ function keyDownListener(
 
 (function () {
   const markup = `
-  <div class="keyboard">
+    <button type='button' class="keyboard">
       Project Information
       <kbd>⌘</kbd>
       <kbd>K</kbd>
-    </div>
+    </button>
 
     <div class="modal">
       <div class="modal__overlay"></div>
@@ -142,5 +142,11 @@ function keyDownListener(
 
   changeProjectInformation();
 
+  const btnKeyboard = document.querySelector<HTMLButtonElement>(".keyboard");
+  if (!btnKeyboard) return;
+
+  btnKeyboard.addEventListener("click", function () {
+    modal.style.display = "block";
+  });
   document.addEventListener("keydown", keyDownListener.bind(modal));
 })();
