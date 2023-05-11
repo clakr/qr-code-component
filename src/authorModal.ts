@@ -35,9 +35,7 @@ function keyDownListener(
   this: HTMLDivElement,
   { metaKey, key }: KeyboardEvent
 ) {
-  // window.navigator.platform === "MacIntel";
-
-  if (metaKey && key === "k") {
+  if ((metaKey && key === "k") || key === "/") {
     this.style.display = "block";
 
     document
@@ -56,11 +54,17 @@ function keyDownListener(
 }
 
 (function () {
+  const isMac = window.navigator.platform === "MacIntel";
+
   const markup = `
     <button type='button' class="keyboard">
       Project Information
-      <kbd>⌘</kbd>
-      <kbd>K</kbd>
+      ${
+        isMac
+          ? `<kbd>⌘</kbd>
+            <kbd>K</kbd>`
+          : `<kbd>/</kbd>`
+      }
     </button>
 
     <div class="modal">
