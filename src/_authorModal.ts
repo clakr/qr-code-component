@@ -40,12 +40,6 @@ function keyDownListener(
   if ((metaKey && key === "k") || key === "/") {
     this.style.display = "block";
 
-    document
-      .querySelector<HTMLButtonElement>(".modal__close")
-      ?.addEventListener("click", () => {
-        this.style.display = "none";
-      });
-
     document.body.style.height = "100%";
     document.body.style.overflow = "hidden";
   }
@@ -147,6 +141,12 @@ function keyDownListener(
   if (!modal) return;
 
   changeProjectInformation();
+
+  document
+    .querySelector<HTMLButtonElement>(".modal__close")
+    ?.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
 
   const btnKeyboard = document.querySelector<HTMLButtonElement>(".keyboard");
   if (!btnKeyboard) return;
