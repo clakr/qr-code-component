@@ -148,8 +148,14 @@ function keyDownListener(
       modal.style.display = "none";
     });
 
+  const root = document.querySelector(":root");
+  if (!root) return;
+
   const btnKeyboard = document.querySelector<HTMLButtonElement>(".keyboard");
   if (!btnKeyboard) return;
+
+  btnKeyboard.style.backgroundColor =
+    window.getComputedStyle(root).backgroundColor;
 
   btnKeyboard.addEventListener("click", function () {
     modal.style.display = "block";
