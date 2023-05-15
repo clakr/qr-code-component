@@ -148,17 +148,19 @@ function keyDownListener(
       modal.style.display = "none";
     });
 
-  const root = document.querySelector(":root");
-  if (!root) return;
+  const html = document.querySelector("html");
+  if (!html) return;
 
   const btnKeyboard = document.querySelector<HTMLButtonElement>(".keyboard");
   if (!btnKeyboard) return;
 
-  btnKeyboard.style.backgroundColor =
-    window.getComputedStyle(root).backgroundColor;
-
   btnKeyboard.addEventListener("click", function () {
     modal.style.display = "block";
+  });
+
+  window.addEventListener("load", function () {
+    btnKeyboard.style.backgroundColor =
+      window.getComputedStyle(html).backgroundColor;
   });
   document.addEventListener("keydown", keyDownListener.bind(modal));
 })();
